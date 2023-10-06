@@ -2,6 +2,6 @@
   {
     "name": "user",
     "path": "/user",
-    "url": "http://localhost:3077"
+    "url": "http://172.23.144.1:5551"
   }
 ]
