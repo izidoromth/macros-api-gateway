@@ -16,7 +16,10 @@ class AuthenticationRoute {
       return res.status(200).send(response);
     } 
     catch (error: any) {
-      return res.status(error.response.status).send({ message: error.response.data.message});
+      if('response' in error)
+        return res.status(error.response.status).send({ message: error.response.data.message});
+      else
+        return res.status(503).send({ message: "The server encountered an error. Try again later."});
     }
   }
 }
